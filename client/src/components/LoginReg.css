@@ -1,0 +1,7 @@
+.login{
+    background-color:var(--clr-accent-600);
+    padding: 2rem;
+}
+.login-form{
+    display: grid;
+}

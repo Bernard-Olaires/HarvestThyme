@@ -1,0 +1,20 @@
+.footer{
+    background-color: var(--clr-accent-400);
+    padding: 2rem;
+}
+.logo{
+    width: 8em;
+    height: auto;
+}
+
+ul{
+    list-style-type: none;
+}
+ul li a{
+    display:flex;
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    color: var(--clr-primary-900);
+}
