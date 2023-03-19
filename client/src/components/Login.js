@@ -4,7 +4,7 @@ import axios from 'axios'
 import useAuth from '../hooks/useAuth';
 import './LoginReg.css'
 import goat from "../images/christmasGoat.jpeg"
-import scooby2 from "../images/scooby2.jpeg"
+import goat2 from "../images/goat2.jpg"
 
 const Login = (props) => {
     const {setAuth} = useAuth();
@@ -53,7 +53,7 @@ const Login = (props) => {
                         <p className='text-light text-center'>Dont have an account? <Link className='text-white' to={'/register'}>Sign up here</Link></p>
                     </form>
                 </div>
-                <img className="form-buddy" src={scooby2} alt="scooby the horse" />
+                <img className="form-buddy" src={goat2} alt="more goat" />
             </div>
         </div>
     );

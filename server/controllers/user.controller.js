@@ -12,14 +12,14 @@ module.exports ={
                 res.status(400).json({error:{errors:{email:{message:'This email is in use.'}}}})
             }else{
                 const newUser = req.body
-                const accessToken = jwt.sign({_id:newUser._id, email:newUser.email, name:newUser.firstName, access:newUser.role}, SECRET, {expiresIn:'30m'})
                 const refreshToken =  jwt.sign({_id:newUser._id}, SECRET, {expiresIn:'1d'})
 
                 newUser.refreshToken = refreshToken
-                finalizedUser =  await User.create(newUser)
+                const finalizedUser =  await User.create(newUser)
+                const accessToken = jwt.sign({_id:newUser._id, email:newUser.email, name:newUser.firstName, access:finalizedUser.role}, SECRET, {expiresIn:'30m'})
 
                 res.cookie('jwt', refreshToken, {httpOnly:true, secure: true, sameSite:'None', maxAge: 2 * 60 * 60 * 1000})
-                res.status(201).json({success:'User logged in!', accessToken:accessToken, user:newUser})
+                res.status(201).json({success:'User logged in!', accessToken:accessToken, user:finalizedUser})
             }
         }
         catch(err){

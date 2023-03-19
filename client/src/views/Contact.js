@@ -19,7 +19,7 @@ const Contact = () => {
             <div className='even-columns'>
                 <div className='location-txt'>
                     <h2>How to find us:</h2>
-                    <p className='fs-4'>We are located at: 78 Augusta road, Rome, Maine 04963</p>
+                    <p className='fs-4'>We are located at 87 Augusta road, Rome, Maine 04963</p>
                     <p className='fs-4'>Follow route 27 from I-95, pass through beautiful downtown Belgrade, and we will be located shortly after on your left.</p>
                 </div>
                 <div className='map-wrapper'>

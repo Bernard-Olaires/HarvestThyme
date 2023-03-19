@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, useNavigate, useLocation} from 'react-router-dom'
 import axios from 'axios'
 import useAuth from '../hooks/useAuth';
 import './LoginReg.css'
 import goat from "../images/christmasGoat.jpeg"
-import scooby2 from "../images/scooby2.jpeg"
+import goat2 from "../images/goat2.jpg"
 
 const Register = () => {
     const {setAuth} = useAuth()
     const navigate = useNavigate()
+    const location = useLocation();
     const [newUser, setNewUser] = useState({
         firstName:'',
         lastName:'',
@@ -17,6 +18,7 @@ const Register = () => {
         confirmPassword:''
     })
     const [errors, setErrors] = useState({})
+    const from = location.state?.from?.pathname || '/shop';
 
     const onChangeHandler = (e)=>{
         setNewUser({...newUser, [e.target.name]:e.target.value})
@@ -27,7 +29,7 @@ const Register = () => {
             .then((res)=>{
                 const accessToken = res?.data?.accessToken;
                 setAuth({user:res.data.user, accessToken});
-                navigate('/')
+                navigate(from, {replace:true})
             })
             .catch((err)=>{
                 setErrors(err.response.data.error.errors)
@@ -70,7 +72,7 @@ const Register = () => {
                         <p className='sign-in'>Already have an account? <Link className='text-white' to={'/login'}>Sign in here</Link></p>
                     </form>
                 </div>
-                <img className="form-buddy" src={scooby2} alt="scooby the horse" />
+                <img className="form-buddy" src={goat2} alt="more goat" />
             </div>
         </div>
     );

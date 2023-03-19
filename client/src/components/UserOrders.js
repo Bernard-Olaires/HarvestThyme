@@ -28,7 +28,9 @@ const UserOrders = () => {
         <div className='container'>
                         {loaded &&
                 orders.map(order=>(
-                        <OrderCard key={order.id} order={order} deleteOrder={deleteOrder}/>
+                    <div key={order.id}>
+                        <OrderCard  order={order} deleteOrder={deleteOrder}/>
+                    </div>
                 ))
             }
         </div>

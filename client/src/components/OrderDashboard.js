@@ -30,7 +30,7 @@ const OrderDashboard = () => {
     useEffect(()=>{
         axios.get('http://localhost:8000/api/allOrders')
             .then(res=>{
-                console.log('here')
+                
                 setOrders(res.data)
                 setLoaded(true)
             })

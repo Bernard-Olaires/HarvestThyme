@@ -46,8 +46,9 @@ const Home = () => {
                 </Swiper>
                 <div className='even-columns hero-text'>
                     <div>
-                        <h2>Lorem ipsum dolor</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos doloremque, sequi neque, alias molestias dolore odio, quae cupiditate magnam nemo quas eos officia explicabo veniam soluta mollitia temporibus quisquam itaque!</p>
+                        <h2>Welcome to Harvest Thyme Farm</h2>
+                        <p>Harvest Thyme is a family owned farm locatedin the scenic Bekgrade lakes region of Maine. Built in 1860, Harvest Thyme has been a stalpe of the area for over 150 years. Now the Knudesen-Blackburn family is reinvigorating life on the farm again.</p>
+                        <p>Harvest Thyme offers a wide variety of fruits and vegetables in season and eggs and other delicious home goods year round. Visit us during the holidays for Christmas Trees, wreaths and a hot cup of cocoa. Our family, goats and mini-horse, Scooby Doo, are looking forward to seeing you!</p>
                     </div>
                     <div className='hero-text-right'>
                         <img className='text-img' src={goat} alt="cute goat" />

@@ -25,7 +25,7 @@
 }
 
 .hero-text {
-    padding: 1em;
+    padding: 2em;
     border-radius: var(--size-200);
     background-color: var(--clr-accent-300);
 }
@@ -38,6 +38,7 @@
 .hero-text-right {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
