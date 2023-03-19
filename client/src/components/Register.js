@@ -3,6 +3,9 @@ import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import useAuth from '../hooks/useAuth';
 import './LoginReg.css'
+import goat from "../images/christmasGoat.jpeg"
+import scooby2 from "../images/scooby2.jpeg"
+
 const Register = () => {
     const {setAuth} = useAuth()
     const navigate = useNavigate()
@@ -33,36 +36,41 @@ const Register = () => {
     return (
         <div className='container'>
             <div className="login">
-                <form onSubmit={submitHandler} className='login-form'>
-                <label className='form-label'>First Name:</label>
-                <input type="text" name="firstName" className='form-control' onChange={onChangeHandler} value={newUser.firstName}/>
-                {
-                    errors.firstName?<p className='errors'>{errors.firstName.message}</p>:null
-                }
-                <label className='form-label'>Last Name:</label>
-                <input type="text" name="lastName" className='form-control' onChange={onChangeHandler} value={newUser.lastName}/>
-                {
-                    errors.lastName?<p className='errors'>{errors.lastName.message}</p>:null
-                }
-                <label className='form-label'>Email:</label>
-                <input type="email" name="email" className='form-control' onChange={onChangeHandler} value={newUser.email}/>
-                {
-                    errors.email?<p className='errors'>{errors.email.message}</p>:null
-                }
-                <label className='form-label'>Password:</label>
-                <input type="password" name="password" className='form-control' onChange={onChangeHandler} value={newUser.password}/>
-                {
-                    errors.password?<p className='errors'>{errors.password.message}</p>:null
-                }
-                <label className='form-label'>Confirm Password:</label>
-                <input type="password" name="confirmPassword" className='form-control' onChange={onChangeHandler} value={newUser.confirmPassword}/>
-                {
-                    errors.confirmPassword?<p className='errors'>{errors.confirmPassword.message}</p>:null
-                }
-                <button className='btn btn-dark border mt-3'>Register</button>
-                <br />
-                <Link className='text-white' to={'/login'}>Already have an account? Login here</Link>
-                </form>
+            <img className="form-buddy" src={goat} alt="goat" />
+                <div className='form-box'>
+                    <h2>Create an Account</h2>
+                    <form onSubmit={submitHandler} className='login-form'>
+                        <label className='form-label'>First Name:</label>
+                        <input type="text" name="firstName" className='form-control' onChange={onChangeHandler} value={newUser.firstName}/>
+                        {
+                            errors.firstName?<p className='errors'>{errors.firstName.message}</p>:null
+                        }
+                        <label className='form-label'>Last Name:</label>
+                        <input type="text" name="lastName" className='form-control' onChange={onChangeHandler} value={newUser.lastName}/>
+                        {
+                            errors.lastName?<p className='errors'>{errors.lastName.message}</p>:null
+                        }
+                        <label className='form-label'>Email:</label>
+                        <input type="email" name="email" className='form-control' onChange={onChangeHandler} value={newUser.email}/>
+                        {
+                            errors.email?<p className='errors'>{errors.email.message}</p>:null
+                        }
+                        <label className='form-label'>Password:</label>
+                        <input type="password" name="password" className='form-control' onChange={onChangeHandler} value={newUser.password}/>
+                        {
+                            errors.password?<p className='errors'>{errors.password.message}</p>:null
+                        }
+                        <label className='form-label'>Confirm Password:</label>
+                        <input type="password" name="confirmPassword" className='form-control' onChange={onChangeHandler} value={newUser.confirmPassword}/>
+                        {
+                            errors.confirmPassword?<p className='errors'>{errors.confirmPassword.message}</p>:null
+                        }
+                        <button className='logReg-btn'>Register</button>
+                        <br />
+                        <p className='sign-in'>Already have an account? <Link className='text-white' to={'/login'}>Sign in here</Link></p>
+                    </form>
+                </div>
+                <img className="form-buddy" src={scooby2} alt="scooby the horse" />
             </div>
         </div>
     );

@@ -25,9 +25,9 @@ const ProductCard = (props) => {
                 <div className='cart-btns'>
                     {
                         auth?.user?.role === "employee"
-                            ?<div>
-                                <Link to={`/shop/edit/${product._id}`}><button>Edit Product</button></Link>
-                                <button onClick={()=>removeProduct(product._id)}>Remove Product</button>
+                            ?<div className='employee-btns-wrap'>
+                                <Link className='edit-link' to={`/shop/edit/${product._id}`}><button className='edit-btn'>Edit Product</button></Link>
+                                <button className='delete-btn' onClick={()=>removeProduct(product._id)}>Remove Product</button>
                             </div>
                             :quantity ===0
                                 ?<button className='add-to-cart' onClick={()=>increaseCartQuantity(product._id)}>+ Add to Cart</button>

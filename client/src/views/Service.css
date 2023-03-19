@@ -19,23 +19,23 @@
     height: 11rem;
     object-fit: cover;
 }
-.card-text{
+.scard-text{
     background-color: var(--clr-accent-300);
     border-radius: var(--size-200);
     padding:var(--size-200);
     flex-grow: 1;
 }
-.card-text h3{
+.scard-text h3{
     opacity:1;
     font-size: var(--fs-700);
     text-align: center;
     line-height: 1.4rem;
 }
-.card-text .price{
+.scard-text .price{
     font-size: 1.4rem;
     margin-top:0.6rem;
 }
-.card-text .price::before{
+.scard-text .price::before{
     content:"$";
     font-size: var(--size-400);
     position: relative;

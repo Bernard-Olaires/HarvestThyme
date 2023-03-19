@@ -18,7 +18,7 @@ module.exports = {
         }
     }, getAllOrders: async (req,res) =>{
         try{
-            const allOrders = await Order.find()
+            const allOrders = await Order.find().sort({pickUp:'asc'})
             res.json(allOrders)
         }
         catch(err){
@@ -62,5 +62,18 @@ module.exports = {
         // catch(err){
         //     res.status(500).json({error:err})
         // }
+    },
+    updateOrderState: async (req, res)=>{
+        try{
+            const updatedState = {
+                state: req.body.state
+            }
+            const updated = await Order.findOneAndUpdate({_id:req.params.id}, updatedState, {new:true})
+            
+            res.json(updated)
+        }
+        catch(err){
+            res.status(500).json({error:err})
+        }
     }
 }

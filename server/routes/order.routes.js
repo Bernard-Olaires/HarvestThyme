@@ -6,4 +6,5 @@ module.exports = (app) =>{
     app.get('/api/allOrders', OrderController.getAllOrders)
     app.get('/api/userOrders', OrderController.getOrdersByUser)
     app.delete('/api/deleteOrder/:id', OrderController.deleteOrder)
+    app.put('/api/updateOrderState/:id', OrderController.updateOrderState)
 }

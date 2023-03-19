@@ -18,7 +18,7 @@ const CartItem = (props) => {
     return (
         <div>
             <Stack direction='horizontal' gap={2}>
-                <img style={{height:'75px', width:'125px', objectFit:'cover'}} src={`/uploads/${product.image}`} alt="product" />
+                <img style={{height:'75px', width:'125px', objectFit:'cover'}} src={product.image} alt="product" />
                 <div className='me-auto'>
                     <div>
                         {product.name}{item.quantity >1&& <span className='text-muted' style={{fontSize:'.65rem'}}>x{item.quantity}</span>}

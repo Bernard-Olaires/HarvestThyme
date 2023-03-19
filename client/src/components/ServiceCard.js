@@ -11,15 +11,15 @@ const ServiceCard = (props) => {
     return (
         <div className='service-card'>
             <img src={service.image} alt="service" />
-            <div className='card-text'>
+            <div className='scard-text'>
                 <h3>{service.name}</h3>
                 <p>{service.description}</p>
                 <p>Contact for information and pricing at: {service.email} or call {formatPhoneNumber(service.phone)}</p>
                 {
                     auth?.user?.role === 'employee'
                         ?<div>
-                            <Link to={`/services/edit/${service._id}`}><button>Edit Service</button></Link>
-                            <button onClick={()=>removeService(service._id)}>Remove Service</button>
+                            <Link className='edit-link' to={`/services/edit/${service._id}`}><button className='edit-btn'>Edit Service</button></Link>
+                            <button className="delete-btn" onClick={()=>removeService(service._id)}>Remove Service</button>
                         </div>
                         :null
                 }

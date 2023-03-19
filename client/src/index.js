@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './fonts.css'
 import {AuthProvider} from './context/AuthProvider'
 import { CartProvider } from './context/CartContext';
 

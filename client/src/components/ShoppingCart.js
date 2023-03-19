@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import CartItem from './CartItem';
 import axios from 'axios'
 import useAuth from '../hooks/useAuth';
+import logo from '../images/logo.jpeg'
 const ShoppingCart = () => {
     const {closeCart, isOpen, cart, clearCart} = useContext(cartContext)
     const [products, setProducts] = useState({})
@@ -49,11 +50,11 @@ const ShoppingCart = () => {
     return (
         <div>
             { loaded &&
-            <Offcanvas show={isOpen} onHide={closeCart} placement='end'>
+            <Offcanvas show={isOpen} onHide={closeCart} placement='end' style={{backgroundColor:'rgb(243,240,232'}}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>{auth?.user?.firstName}'s Cart</Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
+                <Offcanvas.Body className='d-flex flex-column'>
                     <Stack gap={3}>
                         {cart.map(item=>(
                             <CartItem key={item.id} item={item} />
@@ -64,15 +65,19 @@ const ShoppingCart = () => {
                                 return total + (item?.price || 0) * cartItem.quantity
                             },0))}
                         </div>
-                        <form onSubmit={checkout}>
+                        <form onSubmit={checkout} className='d-flex flex-column'>
                             <div>
-                                <label className='form-label'>Pick-up on? </label>
-                                <input type="date" value={date} name='pickup-date' onChange={(e)=>setDate(e.target.value)} />
+                                <label className='form-label fs-4'>Pick-up on? </label>
+                                <input type="date" className='form-control' value={date} name='pickup-date' onChange={(e)=>setDate(e.target.value)} />
                             </div>
-                            <button>Checkout</button>
+                            <button className='checkout m-3 rounded'>Checkout</button>
                         </form>
                     </Stack>
+                    <div>
+                            <img className='align-baseline'src={logo} alt="logo" />
+                    </div>
                 </Offcanvas.Body>
+                
             </Offcanvas>
             }
         </div>

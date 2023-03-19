@@ -14,7 +14,7 @@ const Nav = () => {
         <div className={toggle?'primary-heading-show':'primary-heading'}>
             <div >
                 <div className='nav-wrapper'>
-                    <Link to={'/'}><img className='logo' src={logo} alt='logo'/></Link>
+                    <Link to={'/'}><img className='nav-logo' src={logo} alt='logo'/></Link>
                     <button className="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" onClick={()=>setToggle(!toggle)}>
                         <img className='icon-hamburger' src={icon} alt='' aria-hidden='false' />
                         {/* <img className='icon-close' src={iconClose} alt='' aria-hidden='false' /> */}
@@ -27,7 +27,7 @@ const Nav = () => {
                             <li><Link to={'/contact'}>Contact Us</Link></li>
                         </ul>
                     </nav>
-                    
+                    <button className="invis"></button>
                 </div>
             </div>
         </div>
